@@ -17,7 +17,7 @@ const DisplayCV = ({ onDisplay }) => {
         <h1 className="p1">
           {onDisplay.firstname} <span>{onDisplay.lastname} </span>
         </h1>
-        <p className="p2">Full Stack Javascript Developer</p>
+        <p className="p2">{onDisplay.title}</p>
       </div>
       <div className="clearfix"></div>
       <div className="col-div-4">
@@ -72,11 +72,7 @@ const DisplayCV = ({ onDisplay }) => {
         <div className="content-box">
           <p className="head">Profile</p>
           <p className="p3" style={{ fontSize: "14px" }}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-            corporis odit ab similique illum sapiente deleniti! Accusamus odit
-            aspernatur sequi dignissimos eligendi doloribus?
-            <br />
-            Iste quam modi cum impedit, eaque voluptatem!
+            {onDisplay.description}
           </p>
           <br />
           <p className="head">Experience</p>

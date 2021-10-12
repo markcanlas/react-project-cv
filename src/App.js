@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GeneralInformation from "./components/GeneralInformation";
 import EducationalExperience from "./components/EducationalExperience";
 import PracticalExperience from "./components/PracticalExperience";
+import Achievement from "./components/Achievement";
 import DisplayCV from "./components/DisplayCV";
 import "./App.css";
 
@@ -12,8 +13,6 @@ const App = () => {
   const onGeneralSubmit = (info) => {
     getGeneralInfo(info);
   };
-
-  console.log(beClick);
 
   return (
     <div className="app">
@@ -31,7 +30,7 @@ const App = () => {
           <GeneralInformation onSubmit={onGeneralSubmit} />
           <br />
           <br />
-          <GeneralInformation onSubmit={onGeneralSubmit} />
+          <Achievement onSubmit={onGeneralSubmit} />
           <br />
           <br />
           <GeneralInformation onSubmit={onGeneralSubmit} />

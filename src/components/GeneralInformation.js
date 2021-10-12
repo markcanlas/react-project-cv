@@ -6,6 +6,8 @@ const data = {
   email: "",
   number: "",
   address: "",
+  description: "",
+  title: "",
 };
 
 const GeneralInformation = ({ onSubmit }) => {
@@ -38,6 +40,7 @@ const GeneralInformation = ({ onSubmit }) => {
                 value={info.firstname}
                 onChange={handleChange}
                 placeholder="firsname"
+                required
               />
             </div>
             <div className="field">
@@ -48,6 +51,7 @@ const GeneralInformation = ({ onSubmit }) => {
                 onChange={handleChange}
                 name="lastname"
                 placeholder="lastname"
+                required
               />
             </div>
           </div>
@@ -60,6 +64,7 @@ const GeneralInformation = ({ onSubmit }) => {
                 value={info.email}
                 name="email"
                 placeholder="email"
+                required
               />
             </div>
             <div className="field">
@@ -70,17 +75,43 @@ const GeneralInformation = ({ onSubmit }) => {
                 value={info.number}
                 name="number"
                 placeholder="phone no."
+                required
+              />
+            </div>
+          </div>
+          <div className="two fields">
+            <div className="field">
+              <label>Title</label>
+              <input
+                type="text"
+                onChange={handleChange}
+                value={info.title}
+                name="title"
+                placeholder="example: Software Engineer"
+                required
+              />
+            </div>
+            <div className="field">
+              <label>Address</label>
+              <input
+                type="text"
+                onChange={handleChange}
+                value={info.address}
+                name="address"
+                placeholder="address"
+                required
               />
             </div>
           </div>
           <div className="field">
-            <label>Address</label>
-            <input
-              type="text"
+            <label>Profile Description</label>
+            <textarea
+              rows="2"
+              name="description"
+              value={info.description}
               onChange={handleChange}
-              value={info.address}
-              name="address"
-              placeholder="address"
+              placeholder="enter a brief description of yourself..."
+              required
             />
           </div>
         </div>

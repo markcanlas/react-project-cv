@@ -46,12 +46,12 @@ button {
   margin: 20px 0;
   font-size: 22px;
 }
-.btn-create {
+.btn-preview {
   color: #ebfbee;
   background-color: #2f9e44;
   border: none;
 }
-.btn-preview {
+.btn-create {
   color: #fff5f5;
   background-color: #e03131;
   border: none;
