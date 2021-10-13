@@ -1,32 +1,29 @@
 import React, { useState } from "react";
+import SkillStorage from "./SkillStorage";
 
 const Achievement = () => {
-  const dataInfo = {
+  const [data, setData] = useState({
     skills: [],
     achievements: [],
     languages: [],
-  };
-  const [data, setData] = useState(dataInfo);
+  });
+
+  const { skills, achievements, languages } = data;
 
   const handleKeyPress = (event) => {
-    if (event.key === "Enter" && event.target.name === "skills") {
-      setData({ ...data, ...data.skills.push(event.target.value) });
-    } else if (event.key === "Enter" && event.target.name === "achievements") {
-      setData({ ...data, ...data.achievements.push(event.target.value) });
-    } else if (event.key === "Enter" && event.target.name === "languages") {
-      setData({ ...data, ...data.languages.push(event.target.value) });
+    const {
+      key,
+      target: { value, name },
+    } = event;
+
+    if (key === "Enter" && name === "skills") {
+      setData({ ...data, ...skills.push(value) });
+    } else if (key === "Enter" && name === "achievements") {
+      setData({ ...data, ...achievements.push(value) });
+    } else if (key === "Enter" && name === "languages") {
+      setData({ ...data, ...languages.push(value) });
     }
-    // setData((dataInfo = { skills: [], achievements: [], languages: [] }));
   };
-
-  console.log(data);
-  console.log(data.languages[0]);
-
-  // const onSubmitInfo = (event) => {
-  //   event.preventDefault();
-  //   onSubmit(info);
-  //   setInfo(data);
-  // };
 
   return (
     <div class="ui form">
@@ -40,28 +37,7 @@ const Achievement = () => {
             placeholder="skill"
             onKeyPress={handleKeyPress}
           />
-          <div className="ui segment">
-            <div className="ui  middle aligned divided list">
-              <div className="item">
-                <div className="right floated content">
-                  <div className="ui mini button">Delete</div>
-                </div>
-                <div className="ui dividing header">
-                  <div className="content">{data.skills[0]}</div>
-                </div>
-              </div>
-            </div>
-            <div className="ui middle aligned divided list">
-              <div className="item">
-                <div className="right floated content">
-                  <div className="ui mini button">Delete</div>
-                </div>
-                <div className="ui dividing  header">
-                  <div className="content">{data.skills[1]}</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <SkillStorage data={data} />
         </div>
         <div class="field">
           <label>Awards/Achievements</label>
