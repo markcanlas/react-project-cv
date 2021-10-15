@@ -10,7 +10,7 @@ const data = {
   title: "",
 };
 
-const GeneralInformation = ({ onSubmit }) => {
+const GeneralInformation = ({ onGeneralSubmit }) => {
   const [info, setInfo] = useState(data);
 
   const handleChange = (event) => {
@@ -20,15 +20,15 @@ const GeneralInformation = ({ onSubmit }) => {
     });
   };
 
-  const onSubmitInfo = (event) => {
+  const onGeneralSubmitInfo = (event) => {
     event.preventDefault();
-    onSubmit(info);
+    onGeneralSubmit(info);
     setInfo(data);
   };
 
   return (
     <div>
-      <form className="ui form" onSubmit={onSubmitInfo}>
+      <form className="ui form" onSubmit={onGeneralSubmitInfo}>
         <h4 className="ui dividing header">GENERAL INFORMATION</h4>
         <div className="field">
           <div className="two fields">

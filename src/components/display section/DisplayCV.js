@@ -1,6 +1,6 @@
 import React from "react";
 import faker from "faker";
-import GeneralInformation from "./GeneralInformation";
+
 import "./DisplayCV.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,7 +9,7 @@ import {
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 
-const DisplayCV = ({ onDisplay }) => {
+const DisplayCV = ({ onDisplay, onDisplaySkill }) => {
   return (
     <div className="display">
       <div className="top-section">
@@ -34,25 +34,15 @@ const DisplayCV = ({ onDisplay }) => {
           <p className="p3">
             <FontAwesomeIcon color="black" icon={faHome}></FontAwesomeIcon>
             &nbsp;&nbsp;&nbsp;{onDisplay.address}
-          </p>{" "}
+          </p>
           <br />
           <p className="head">My Skills</p>
           <ul className="skills">
-            <li>
-              <span>HTML</span>
-            </li>
-            <li>
-              <span>CSS</span>
-            </li>
-            <li>
-              <span>JavaScript</span>
-            </li>
-            <li>
-              <span>React JS</span>
-            </li>
-            <li>
-              <span>Github</span>
-            </li>
+            {onDisplaySkill.map((skill) => (
+              <li>
+                <span>{skill.skills}</span>
+              </li>
+            ))}
           </ul>
           <br />
           <p className="head head2">Hobby / Interest</p>

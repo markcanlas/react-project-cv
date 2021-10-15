@@ -38,21 +38,26 @@ button {
   width: 10%;
   cursor: pointer;
 }
+button:hover {
+  transform: scale(1.2);
+}
 
 .btn {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin: 20px 0;
-  font-size: 22px;
+  display: flex !important;
+  gap: 5px;
+  justify-content: center !important;
+  margin: 20px 0 !important;
+  font-size: 22px !important;
 }
 .btn-preview {
-  color: #ebfbee;
-  background-color: #2f9e44;
+  padding-left: 8px;
+  color: #ebfbee !important;
+  background-color: #2f9e44 !important;
   border: none;
 }
+
 .btn-create {
-  color: #fff5f5;
-  background-color: #e03131;
-  border: none;
+  color: #fff5f5 !important;
+  background-color: #e03131 !important;
+  border: none !important;
 }
