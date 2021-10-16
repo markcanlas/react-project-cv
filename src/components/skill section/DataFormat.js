@@ -1,18 +1,27 @@
 import React from "react";
 
 const DataFormat = ({
+  inputSkill,
   displaySkill,
-  displayAward,
-  displayLanguage,
   onSubmitSkill,
+  handleSkillChange,
+  inputAward,
+  displayAward,
   onSubmitAward,
+  handleAwardChange,
+  inputLanguage,
+  displayLanguage,
   onSubmitLanguage,
-  handleChange,
-  inputText,
-  setInputText,
+  handleLanguageChange,
 }) => {
-  const onSubmitChange = (event) => {
-    handleChange(event.target.value);
+  const onSubmitSkillChange = (event) => {
+    handleSkillChange(event.target.value);
+  };
+  const onSubmitAwardChange = (event) => {
+    handleAwardChange(event.target.value);
+  };
+  const onSubmitLanguageChange = (event) => {
+    handleLanguageChange(event.target.value);
   };
 
   return (
@@ -25,8 +34,11 @@ const DataFormat = ({
             <label>Skills</label>
             <div className="ui icon input">
               <input
-                value={inputText}
-                onChange={onSubmitChange}
+                onClick={(event) => {
+                  console.log(event.target.name);
+                }}
+                value={inputSkill}
+                onChange={onSubmitSkillChange}
                 type="text"
                 name="skills"
                 placeholder="skill"
@@ -42,11 +54,11 @@ const DataFormat = ({
             <label>Awards/Achievements</label>
             <div className="ui icon input">
               <input
-                value={inputText}
+                value={inputAward}
                 type="text"
                 name="awards"
                 placeholder="achievements"
-                onChange={onSubmitChange}
+                onChange={onSubmitAwardChange}
               />
 
               <i
@@ -60,11 +72,11 @@ const DataFormat = ({
             <label>Languages</label>
             <div className="ui icon input">
               <input
-                value={inputText}
+                value={inputLanguage}
                 type="text"
                 name="languages"
                 placeholder="languages"
-                onChange={onSubmitChange}
+                onChange={onSubmitLanguageChange}
               />
 
               <i

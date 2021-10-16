@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListFormat = ({ text, handleDelete }) => {
+const ListDelete = ({ text, handleDelete }) => {
   return (
     <div className="ui form">
       <div className="ui segment">
@@ -21,4 +21,4 @@ const ListFormat = ({ text, handleDelete }) => {
   );
 };
 
-export default ListFormat;
+export default ListDelete;

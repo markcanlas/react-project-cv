@@ -9,7 +9,12 @@ import {
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 
-const DisplayCV = ({ onDisplay, onDisplaySkill }) => {
+const DisplayCV = ({
+  onDisplay,
+  onDisplaySkill,
+  onDisplayAward,
+  onDisplayLanguage,
+}) => {
   return (
     <div className="display">
       <div className="top-section">
@@ -46,15 +51,14 @@ const DisplayCV = ({ onDisplay, onDisplaySkill }) => {
           </ul>
           <br />
           <p className="head head2">Hobby / Interest</p>
-          <p className="p3">Reading Books & Novels</p>
-          <p className="p3">Singing at karaoke's</p>
-          <p className="p3">Coding to gain mastery</p>
-          <p className="p3">Watching Anime & Netflix</p>
+          {onDisplayAward.map((award) => (
+            <p className="p3">{award.awards}</p>
+          ))}
           <br />
           <p className="head head2">Languages</p>
-          <p className="p3">English</p>
-          <p className="p3">Tagalog</p>
-          <p className="p3">Bisaya</p>
+          {onDisplayLanguage.map((language) => (
+            <p className="p3">{language.languages}</p>
+          ))}
         </div>
       </div>
       <div className="line"></div>

@@ -9,7 +9,6 @@ import "./App.css";
 const App = () => {
   const [generalInfo, setGeneralInfo] = useState({});
   const [beClick, setBeClick] = useState(true);
-  const [inputText, setInputText] = useState("");
   const [skillItem, setSkillItem] = useState([]);
   const [awardItem, setAwardItem] = useState([]);
   const [languageItem, setLanguageItem] = useState([]);
@@ -37,8 +36,6 @@ const App = () => {
           <br />
           <br />
           <Achievement
-            inputText={inputText}
-            setInputText={setInputText}
             skillItem={skillItem}
             setSkillItem={setSkillItem}
             awardItem={awardItem}
@@ -51,7 +48,12 @@ const App = () => {
           <GeneralInformation onGeneralSubmit={onGeneralSubmit} />
         </div>
       ) : (
-        <DisplayCV onDisplay={generalInfo} onDisplaySkill={skillItem} />
+        <DisplayCV
+          onDisplay={generalInfo}
+          onDisplaySkill={skillItem}
+          onDisplayAward={awardItem}
+          onDisplayLanguage={languageItem}
+        />
       )}
     </div>
   );

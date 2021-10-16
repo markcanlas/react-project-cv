@@ -1,5 +1,5 @@
 import React from "react";
-import ListFormat from "./ListFormat";
+import ListDelete from "./ListDelete";
 
 const SkillStorage = ({ skill, skillItem, setSkillItem, text }) => {
   const handleDelete = (event) => {
@@ -7,7 +7,7 @@ const SkillStorage = ({ skill, skillItem, setSkillItem, text }) => {
     setSkillItem(skillItem.filter((el) => el.id !== skill.id));
   };
 
-  return <ListFormat text={text} handleDelete={handleDelete} />;
+  return <ListDelete text={text} handleDelete={handleDelete} />;
 };
 
 export default SkillStorage;

@@ -6,8 +6,6 @@ import LanguageStorage from "./LanguageStorage";
 import "./Achievement.css";
 
 const Achievement = ({
-  inputText,
-  setInputText,
   skillItem,
   setSkillItem,
   awardItem,
@@ -15,35 +13,45 @@ const Achievement = ({
   languageItem,
   setLanguageItem,
 }) => {
-  const handleChange = (value) => {
-    setInputText(value);
+  const [inputSkill, setInputSkill] = useState("");
+  const [inputAward, setInputAward] = useState("");
+  const [inputLanguage, setInputLanguage] = useState("");
+
+  const handleSkillChange = (value) => {
+    setInputSkill(value);
+  };
+  const handleAwardChange = (value) => {
+    setInputAward(value);
+  };
+  const handleLanguageChange = (value) => {
+    setInputLanguage(value);
   };
 
   const onSubmitSkill = (event) => {
     event.preventDefault();
     setSkillItem([
       ...skillItem,
-      { skills: inputText, id: Math.random() * 1000 },
+      { skills: inputSkill, id: Math.random() * 1000 },
     ]);
-    setInputText("");
+    setInputSkill("");
   };
 
   const onSubmitAward = (event) => {
     event.preventDefault();
     setAwardItem([
       ...awardItem,
-      { awards: inputText, id: Math.random() * 1000 },
+      { awards: inputAward, id: Math.random() * 1000 },
     ]);
-    setInputText("");
+    setInputAward("");
   };
 
   const onSubmitLanguage = (event) => {
     event.preventDefault();
     setLanguageItem([
       ...languageItem,
-      { languages: inputText, id: Math.random() * 1000 },
+      { languages: inputLanguage, id: Math.random() * 1000 },
     ]);
-    setInputText("");
+    setInputLanguage("");
   };
 
   const displaySkill = skillItem.map((skill) => (
@@ -81,15 +89,18 @@ const Achievement = ({
 
   return (
     <DataFormat
+      inputSkill={inputSkill}
       displaySkill={displaySkill}
-      displayAward={displayAward}
-      displayLanguage={displayLanguage}
       onSubmitSkill={onSubmitSkill}
+      handleSkillChange={handleSkillChange}
+      inputAward={inputAward}
+      displayAward={displayAward}
       onSubmitAward={onSubmitAward}
+      handleAwardChange={handleAwardChange}
+      inputLanguage={inputLanguage}
+      displayLanguage={displayLanguage}
       onSubmitLanguage={onSubmitLanguage}
-      handleChange={handleChange}
-      inputText={inputText}
-      setInputText={setInputText}
+      handleLanguageChange={handleLanguageChange}
     />
   );
 };

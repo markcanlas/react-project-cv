@@ -1,5 +1,5 @@
 import React from "react";
-import ListFormat from "./ListFormat";
+import ListDelete from "./ListDelete";
 
 const AwardStorage = ({ award, awardItem, setAwardItem, text }) => {
   const handleDelete = (event) => {
@@ -7,7 +7,7 @@ const AwardStorage = ({ award, awardItem, setAwardItem, text }) => {
     setAwardItem(awardItem.filter((el) => el.id !== award.id));
   };
 
-  return <ListFormat text={text} handleDelete={handleDelete} />;
+  return <ListDelete text={text} handleDelete={handleDelete} />;
 };
 
 export default AwardStorage;

@@ -1,5 +1,5 @@
 import React from "react";
-import ListFormat from "./ListFormat";
+import ListDelete from "./ListDelete";
 
 const LanguageStorage = ({ language, languageItem, setLanguageItem, text }) => {
   const handleDelete = (event) => {
@@ -7,7 +7,7 @@ const LanguageStorage = ({ language, languageItem, setLanguageItem, text }) => {
     setLanguageItem(languageItem.filter((el) => el.id !== language.id));
   };
 
-  return <ListFormat text={text} handleDelete={handleDelete} />;
+  return <ListDelete text={text} handleDelete={handleDelete} />;
 };
 
 export default LanguageStorage;
